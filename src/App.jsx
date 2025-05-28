@@ -1,11 +1,13 @@
 import Home from "./pages/HomePg";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Students from "./pages/StudentsPg";
 import Engineers from "./components/Engineers";
 import Comments from "./pages/CommentsPg";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Researchers from "./pages/ResearchersPg";
+import DisplayDiagram from "./components/DisplayDiagram";
 import { useLocation, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -22,10 +24,11 @@ function App() {
         <Route path="/engineers" element={<Engineers/>}></Route>
         <Route path="/comments" element={<Comments/>}></Route>
         <Route path="/researchers" element={<Researchers/>}></Route>
+        <Route path="/engineers/:substance/:diagram" element={<DisplayDiagram />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<SignUp/>} />
       </Routes>
-    
+      {!hideHeaderFooter && <Footer />}
     </>
   )
 }

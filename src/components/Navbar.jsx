@@ -15,7 +15,7 @@ export default function Navbar(){
                 </div>
             </div>
             <div className="shadow-md shadow-[#AAA5A5] text-center">
-                <h1 className="text-[#1AC2EA] text-[24px] font-semibold">{path.charAt(1).toUpperCase() + path.slice(2)}</h1>
+                <h1 className="text-[#1AC2EA] text-[24px] font-semibold">{path.split("/")[1]?.charAt(0).toUpperCase() + path.split("/")[1]?.slice(1) || "Home"}</h1>
             </div>
         </div>
     )
