@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLeftLong } from '@fortawesome/free-solid-svg-icons'
 import logo from "../assets/images/chelab-logo.png"
 import googleLogo from "../assets/images/Google-logo.png"
-import appleLogo from "../assets/images/Apple-logo.png"
+import appleLogo from "../assets/images/apple-logo.png"
 import about from "../data/About"
 
 export default function Login() {
