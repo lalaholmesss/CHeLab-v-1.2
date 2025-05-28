@@ -4,7 +4,7 @@ import { faLeftLong } from '@fortawesome/free-solid-svg-icons'
 import logo from "../assets/images/chelab-logo.png"
 import googleLogo from "../assets/images/Google-logo.png"
 import appleLogo from "../assets/images/apple-logo.png"
-import about from "../data/About"
+import about from "../data/about"
 
 export default function Login() {
     return(
