@@ -25,61 +25,31 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="max-w-[1720px] bg-[#EEFFF7] px-[40px] flex flex-col font-[Poppins] py-[32px]">
-      <h1 className="text-[80px] text-[#00BF63] text-center">Welcome!</h1>
+   <div className="max-w-[1720px] bg-[#EEFFF7] px-6 md:px-[40px] py-[32px] flex flex-col font-[Poppins] min-h-screen">
+  <h1 className="text-[48px] md:text-[64px] lg:text-[80px] text-[#00BF63] text-center font-semibold mb-12">
+    Welcome!
+  </h1>
 
-      <div className="flex items-center space-x-4 bg-[#f3fef9] py-[64px]">
-        <div className="flex items-center border border-[#AAA5A5] rounded-[16px] w-[1045px] px-4 py-2 bg-white">
-          <FontAwesomeIcon icon={faMagnifyingGlass} className="text-gray-400 mr-2" />
-          <input
-            type="text"
-            placeholder="Enter prompt..."
-            className="w-full outline-none bg-transparent placeholder-gray-400"
-            onChange={(e) => setQuery(e.target.value)}
-          />
-        </div>
+  <div className="flex flex-col md:flex-row items-center justify-center gap-6 px-6 py-[48px] rounded-xl">
 
-        <div className="relative">
-          <button
-            onClick={() => setOpen(!open)}
-            className="bg-white w-44 text-black px-6 py-2 rounded-[16px] flex items-center gap-2 border border-[#AAA5A5] cursor-pointer relative"
-          >
-            {page ? menuItems.find((item) => item.href === page)?.label : "Fields"}
-            <FontAwesomeIcon
-              icon={open ? faAngleUp : faAngleDown}
-              className="absolute right-[20px]"
-            />
-          </button>
-          {open && (
-            <div className="absolute w-44 rounded-[16px] bg-white shadow-lg border border-gray-200 z-10">
-              <ul className="py-2 text-sm text-gray-700">
-                {menuItems.map((item) => (
-                  <li key={item.label}>
-                    <button
-                      className="w-full text-left px-4 py-2 hover:bg-gray-100"
-                      onClick={() => {
-                        setPage(item.href);
-                        setOpen(false);
-                      }}
-                    >
-                      {item.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      </div>
-
-      <div className="flex justify-center mb-[200px]">
-        <button
-          onClick={handleSearch}
-          className="bg-[#00BF63] border-[#00BF63] text-white border-[3px] rounded-[20px] py-[10px] px-[24px] cursor-pointer"
-        >
-          Search
-        </button>
-      </div>
+    <div className="flex items-center border border-[#AAA5A5] rounded-[16px] w-full max-w-[800px] px-4 py-3 bg-white shadow-sm">
+      <FontAwesomeIcon icon={faMagnifyingGlass} className="text-gray-400 mr-3" />
+      <input
+        type="text"
+        placeholder="Enter prompt..."
+        className="w-full outline-none bg-transparent placeholder-gray-400 text-base"
+        onChange={(e) => setQuery(e.target.value)}
+      />
     </div>
+
+    <button
+      onClick={handleSearch}
+      className="bg-[#00BF63] border-[#00BF63] text-white border-[3px] rounded-[20px] py-[10px] px-[32px] hover:bg-[#00a655] transition duration-200 shadow-md"
+    >
+      Search
+    </button>
+  </div>
+</div>
+
   );
 }
